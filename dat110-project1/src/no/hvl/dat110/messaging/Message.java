@@ -10,7 +10,7 @@ public class Message {
 		this.data = data;
 
 		if(data == null || data.length >= 127){
-			throw new UnsupportedOperationException("Array is empty or it's length is more than 127"));
+			throw new UnsupportedOperationException("Array is empty or it's length is more than 127");
 		}
 	}
 
