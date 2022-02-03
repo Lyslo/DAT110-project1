@@ -7,13 +7,11 @@ public class Message {
 	private byte[] data;
 
 	public Message(byte[] data) {
-		
-		// TODO - START
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.constructor("Message"));
-			
-		// TODO - END
+		this.data = data;
+
+		if(data == null || data.length >= 127){
+			throw new UnsupportedOperationException("Array is empty or it's length is more than 127"));
+		}
 	}
 
 	public byte[] getData() {
