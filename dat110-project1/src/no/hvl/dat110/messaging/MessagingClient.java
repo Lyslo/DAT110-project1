@@ -18,17 +18,14 @@ public class MessagingClient {
 	}
 	
 	// connect to messaging server
-	public Connection connect () {
-			
-		Socket clientSocket;
-		Connection connection = null;
-		
+	public Connection connect() throws IOException {
+
 		// TODO - START
 		// create TCP socket for client and connection
-		
-		if (true)
-			throw new UnsupportedOperationException(TODO.method());
-		
+
+		Socket clientSocket = new Socket(server, port);
+		Connection connection = new Connection(clientSocket);
+
 		// TODO - END
 		return connection;
 	}
