@@ -5,9 +5,10 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import static no.hvl.dat110.messaging.MessageUtils.*;
 
 import no.hvl.dat110.TODO;
+
+import static no.hvl.dat110.messaging.MessageUtils.*;
 
 
 public class Connection {
@@ -36,17 +37,17 @@ public class Connection {
 	public void send(Message message) {
 
 		byte[] data;
-
+		
 		// TODO - START
 		// encapsulate the data contained in the message and write to the output stream
-
+		
 		data = encapsulate(message);
 
 		try {
 			outStream.write(data);
 			close();
-		}catch(IOException ex){
-			ex.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 		// TODO - END
@@ -57,7 +58,7 @@ public class Connection {
 
 		Message message = null;
 		byte[] data;
-
+		
 		// TODO - START
 		// read a segment from the input stream and decapsulate into message
 
@@ -65,8 +66,8 @@ public class Connection {
 			data = inStream.readAllBytes();
 			close();
 			message = decapsulate(data);
-		}catch(IOException ex){
-			ex.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 
 		// TODO - END
