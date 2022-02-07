@@ -9,7 +9,7 @@ public class Message {
 	public Message(byte[] data) {
 		this.data = data;
 
-		if(data == null || data.length >= 127){
+		if(data == null || data.length > 127){
 			throw new UnsupportedOperationException("Array is empty or it's length is more than 127");
 		}
 	}

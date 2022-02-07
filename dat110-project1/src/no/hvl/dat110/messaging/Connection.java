@@ -45,7 +45,6 @@ public class Connection {
 
 		try {
 			outStream.write(data);
-			close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

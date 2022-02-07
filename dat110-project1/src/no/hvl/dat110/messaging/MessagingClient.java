@@ -18,13 +18,19 @@ public class MessagingClient {
     }
 
     // connect to messaging server
-    public Connection connect() throws IOException {
+    public Connection connect(){
+		Socket clientSocket;
+		Connection connection = null;
 
         // TODO - START
         // create TCP socket for client and connection
-
-        Socket clientSocket = new Socket(server, port);
-        Connection connection = new Connection(clientSocket);
+		try {
+			clientSocket = new Socket(server, port);
+			connection = new Connection(clientSocket);
+		} catch (IOException ex) {
+			System.out.println("Messaging server: " + ex.getMessage());
+			ex.printStackTrace();
+		}
 
         // TODO - END
         return connection;
