@@ -1,7 +1,6 @@
 package no.hvl.dat110.rpc;
 
 import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import no.hvl.dat110.TODO;
@@ -14,12 +13,15 @@ public class RPCUtils {
 
         // TODO - START
 
-        // Encapsulate the rpcid and payload in a byte array according to the RPC message syntax
+        // Encapsulate the rpcid and payload in a byte array according to the  RPC message syntax
+
         rpcmsg = new byte[payload.length + 1];
         rpcmsg[0] = rpcid;
+
         for (int i = 0; i < payload.length; i++) {
             rpcmsg[i + 1] = payload[i];
         }
+
         // TODO - END
 
         return rpcmsg;
@@ -31,11 +33,13 @@ public class RPCUtils {
 
         // TODO - START
 
-        // Decapsulate the rpcid and payload in a byte array according to the RPC message syntax
-        payload = new byte[rpcmsg.length - 1];
-        for (int i = 0; i < payload.length; i++) {
-            payload[i] = rpcmsg[i + 1];
-        }
+        // Decapsulate the rpcid and payload in a byte array according to the  RPC message syntax
+
+       payload = new byte[rpcmsg.length-1];
+
+       for (int i = 0; i < payload.length; i++){
+           payload[i] = rpcmsg[i+1];
+       }
 
         // TODO - END
 
@@ -49,7 +53,8 @@ public class RPCUtils {
 
         // TODO - START
 
-        encoded = str.getBytes(StandardCharsets.UTF_8);
+        if (true)
+            throw new UnsupportedOperationException(TODO.method());
 
         // TODO - END
 
@@ -62,7 +67,8 @@ public class RPCUtils {
 
         // TODO - START
 
-        decoded = new String(data);
+        if (true)
+            throw new UnsupportedOperationException(TODO.method());
 
         // TODO - END
 
