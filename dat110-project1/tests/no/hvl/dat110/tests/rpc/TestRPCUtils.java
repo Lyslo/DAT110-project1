@@ -34,8 +34,6 @@ class TestRPCUtils {
 
     }
 
-
-
     @Test
     void testMarshallString() {
 
