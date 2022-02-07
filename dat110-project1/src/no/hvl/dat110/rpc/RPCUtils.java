@@ -35,8 +35,11 @@ public class RPCUtils {
 
         // Decapsulate the rpcid and payload in a byte array according to the  RPC message syntax
 
-        if (true)
-            throw new UnsupportedOperationException(TODO.method());
+       payload = new byte[rpcmsg.length-1];
+
+       for (int i = 0; i < payload.length; i++){
+           payload[i] = rpcmsg[i+1];
+       }
 
         // TODO - END
 
