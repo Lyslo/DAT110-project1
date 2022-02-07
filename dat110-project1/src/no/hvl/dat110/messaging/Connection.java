@@ -62,8 +62,7 @@ public class Connection {
 		// read a segment from the input stream and decapsulate into message
 
 		try {
-			data = inStream.readAllBytes();
-			close();
+			data = inStream.readNBytes(SEGMENTSIZE);
 			message = decapsulate(data);
 		} catch (IOException e) {
 			e.printStackTrace();
