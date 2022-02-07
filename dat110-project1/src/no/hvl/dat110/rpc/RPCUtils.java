@@ -136,8 +136,7 @@ public class RPCUtils {
 
         // TODO - START
 
-        if (true)
-            throw new UnsupportedOperationException(TODO.method());
+        decoded = ByteBuffer.wrap(data).getInt();
 
         // TODO - END
 
